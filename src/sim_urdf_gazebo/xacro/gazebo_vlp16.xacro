@@ -1,0 +1,44 @@
+   <!-- Gazebo requires the velodyne_gazebo_plugins package -->
+<robot name="my_sensors" xmlns:xacro="http://wiki.ros.org/xacro">
+<gazebo reference="velodyne">
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <sensor type="ray" name="velodyne-VLP16">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>false</visualize>
+    <update_rate>10</update_rate>
+    <ray>
+        <scan>
+        <horizontal>
+            <samples>1875</samples>
+            <resolution>1</resolution>
+            <min_angle>-${M_PI}</min_angle>
+            <max_angle>${M_PI}</max_angle>
+        </horizontal>
+        <vertical>
+            <samples>1875</samples>
+            <resolution>1</resolution>
+            <min_angle>-${15.0*M_PI/180.0}</min_angle>
+            <max_angle> ${15.0*M_PI/180.0}</max_angle>
+        </vertical>
+        </scan>
+        <range>
+        <min>0.3</min>
+        <max>131</max>
+        <resolution>0.001</resolution>
+        </range>
+        <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.0</stddev>
+        </noise>
+    </ray>
+    <plugin name="gazebo_ros_velodyne_controller" filename="libgazebo_ros_velodyne_velodyne.so">
+    <topicName>velodyne/velodyne_points</topicName>
+    <frameName>vehicle/velodyne</frameName>
+        <min_range>0.9</min_range>
+        <max_range>130</max_range>
+        <gaussianNoise>0.008</gaussianNoise>
+    </plugin>
+    </sensor>
+</gazebo>
+</robot>

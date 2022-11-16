@@ -1,0 +1,6 @@
+<!-- 组合小车底盘与摄像头与雷达 -->
+<robot name="camera_lidar" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="sim_2plus_base.xacro" />
+    <xacro:include filename="camera_1.xacro" />
+    <xacro:include filename="lidar_1.xacro" />
+</robot>

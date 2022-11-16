@@ -1,0 +1,7 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro $(find sim_urdf_gazebo)/xacro/VLP-16.urdf.xacro" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+        <!-- <arg name="world_name" value="$(find sim_urdf_gazebo)/worlds/room1.world" /> -->
+    </include>
+
+</launch>

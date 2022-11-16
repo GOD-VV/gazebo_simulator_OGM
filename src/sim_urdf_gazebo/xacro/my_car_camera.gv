@@ -1,0 +1,29 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"back_wheel" [label="back_wheel"];
+"camera" [label="camera"];
+"front_wheel" [label="front_wheel"];
+"left_wheel" [label="left_wheel"];
+"right_wheel" [label="right_wheel"];
+"velodyne_base_link" [label="velodyne_base_link"];
+"velodyne" [label="velodyne"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_link2base_footprint" [label="xyz: 0 0 0.055 \nrpy: 0 -0 0"]
+"base_link2base_footprint" -> "base_link"
+"base_link" -> "back_wheel2base_link" [label="xyz: -0.0925 0 -0.0475 \nrpy: 0 -0 0"]
+"back_wheel2base_link" -> "back_wheel"
+"base_link" -> "camera2base_link" [label="xyz: 0.08 0 0.0525 \nrpy: 0 -0 0"]
+"camera2base_link" -> "camera"
+"base_link" -> "front_wheel2base_link" [label="xyz: 0.0925 0 -0.0475 \nrpy: 0 -0 0"]
+"front_wheel2base_link" -> "front_wheel"
+"base_link" -> "left_wheel2base_link" [label="xyz: 0 0.1 -0.0225 \nrpy: 0 -0 0"]
+"left_wheel2base_link" -> "left_wheel"
+"base_link" -> "right_wheel2base_link" [label="xyz: 0 -0.1 -0.0225 \nrpy: 0 -0 0"]
+"right_wheel2base_link" -> "right_wheel"
+"base_link" -> "velodyne_base_mount_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"velodyne_base_mount_joint" -> "velodyne_base_link"
+"velodyne_base_link" -> "velodyne_base_scan_joint" [label="xyz: 0 0 0.0377 \nrpy: 0 -0 0"]
+"velodyne_base_scan_joint" -> "velodyne"
+}

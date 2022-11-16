@@ -1,0 +1,9 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro $(find sim_demo_1)/urdf/xacro/lidar_camera.xacro" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find sim_demo_1)/config//rviz/sim_2plus.rviz" />
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" />
+
+</launch>

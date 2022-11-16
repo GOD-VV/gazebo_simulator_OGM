@@ -1,0 +1,18 @@
+<!-- 组合小车底盘与摄像头 -->
+<robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="my_head.urdf.xacro" />
+    <xacro:include filename="my_base.urdf.xacro" />
+    <xacro:include filename="my_camera.urdf.xacro" /> 
+     <xacro:include filename="my_lidar.urdf.xacro" /> 
+    <xacro:include filename="my_car_move.urdf.xacro" />
+     <xacro:include filename="gazebo_lidar.xacro" />
+    <!-- <xacro:include filename="gazebo_camera.xacro" /> -->
+    <xacro:include filename="kinect.xacro" /> 
+        <!-- <xacro:include filename="gazebo_vlp16.xacro" /> -->
+    <!-- <xacro:include filename="VLP-16.urdf.xacro"/>
+    <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440"  >
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
+    </xacro:VLP-16>  -->
+
+
+</robot>
